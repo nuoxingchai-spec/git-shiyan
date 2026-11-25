@@ -12,7 +12,8 @@ int main(void)
     int n = (int)(sizeof(students) / sizeof(students[0]));
     int i;
 
-    printf("学生成绩管理系统 v0.1\n\n");
+    printf("学生成绩管理系统 v0.2（按平均分排名）\n\n");
+    student_sort_by_average(students, n);
     student_print_header();
     for (i = 0; i < n; i++) {
         student_print_row(&students[i]);
