@@ -36,3 +36,22 @@ void student_print_row(const Student *s)
            s->id, s->name, s->math, s->english,
            student_total(s), student_average(s), student_grade(s));
 }
+
+void student_sort_by_average(Student *arr, int n)
+{
+    int i, j, best;
+
+    for (i = 0; i < n - 1; i++) {
+        best = i;
+        for (j = i + 1; j < n; j++) {
+            if (student_average(&arr[j]) > student_average(&arr[best])) {
+                best = j;
+            }
+        }
+        if (best != i) {
+            Student tmp = arr[i];
+            arr[i] = arr[best];
+            arr[best] = tmp;
+        }
+    }
+}
