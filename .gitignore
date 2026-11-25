@@ -1,0 +1,10 @@
+# 构建产物
+bin/
+*.o
+*.obj
+*.exe
+
+# 编辑器
+.vscode/
+*.swp
+.DS_Store
