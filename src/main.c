@@ -13,12 +13,15 @@ int main(void)
     int n = (int)(sizeof(students) / sizeof(students[0]));
     int i;
 
-    printf("学生成绩管理系统 v0.2（按平均分排名）\n\n");
+    printf("学生成绩管理系统 v0.3（主干：新增最低分统计）\n\n");
     student_sort_by_average(students, n);
     student_print_header();
     for (i = 0; i < n; i++) {
         student_print_row(&students[i]);
     }
+
+    printf("\n最低平均分：%.1f（%s）\n",
+           student_average(&students[n - 1]), students[n - 1].name);
 
     return 0;
 }
