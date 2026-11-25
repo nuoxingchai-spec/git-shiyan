@@ -24,4 +24,7 @@ char student_grade(const Student *s);
 void student_print_header(void);
 void student_print_row(const Student *s);
 
+/* 按平均分从高到低排序（选择排序，稳定实现） */
+void student_sort_by_average(Student *arr, int n);
+
 #endif /* STUDENT_H */
